@@ -63,17 +63,12 @@ def check_free_exist(game_zone):
 game_end = False
 
 # знак текущего игрока ("o" или "x" (en))
-player = "o"
+player = "x"
 
 # Выводим начальную раскладку (пустое игровое поле)
 out_game_tab(game_zone)
 
 while not game_end:
-    # Меняем игрока (первый ход - меням на крестики)
-    if player == "o":
-        player = "x"
-    else:
-        player = "o"
     step_is_done = False
     while not step_is_done:
         input_ok = False
@@ -122,6 +117,12 @@ while not game_end:
         print("Все игровые поля заполнены. Победитель не выявлен. Ничья!")
         game_end = True
 
+    # Меняем игрока (первый ход - меням на крестики)
+    if player == "o":
+        player = "x"
+    else:
+        player = "o"
+        
 # Вывод на экран финальной раскладки
 out_game_tab(game_zone)
 print("Спасибо!")
